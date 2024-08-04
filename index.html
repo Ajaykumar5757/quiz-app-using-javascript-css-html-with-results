@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="javascript/javascript.js"></script>
+</head>
+<body>
+    <div class="section">
+        <h1 style="text-align: center; font-size: 45px;">Olympics Quiz</h1>
+        <div class="score">
+            <h2 style="text-align: right;margin-right: 30px;">Your Result : <span id="quiz-score">0</span>/10</h2>
+        </div>
+        <div class="one">
+            <h2>1. Who won the first individual gold medal in the olympics?</h2>
+            <p class="group"><input type="radio" id="one-op1" name="ques1">Vijiendar Singh</p>
+            <p class="group"><input type="radio" id="one-op2" name="ques1">Abinav Mithra</p>
+            <p class="group"><input type="radio" id="one-op3" name="ques1">Sakshi malik</p>
+            <p class="group"><input type="radio" id="one-op4" name="ques1">Neeraj chopra</p>
+            <h2 id="result1" class="result"></h2>
+        </div>
+        <div class="two">
+            <h2>2. Where olympics 2020 was held at?</h2>
+            <p class="group"><input type="radio" id="two-op1" name="ques2">Paris</p>
+            <p class="group"><input type="radio" id="two-op2" name="ques2">Rio de jenerio</p>
+            <p class="group"><input type="radio" id="two-op3" name="ques2">London</p>
+            <p class="group"><input type="radio" id="two-op4" name="ques2">Tokyo</p>
+            <h2 id="result2" class="result"></h2>
+        </div>
+        <div class="three">
+            <h2>3. In which sport India has won 8 Gold medals in Olympics?</h2>
+            <p class="group"><input type="radio" id="three-op1" name="ques3">Hockey</p>
+            <p class="group"><input type="radio" id="three-op2" name="ques3">Shooting</p>
+            <p class="group"><input type="radio" id="three-op3" name="ques3">Badminton</p>
+            <p class="group"><input type="radio" id="three-op4" name="ques3">Wrestling</p>
+            <h2 id="result3" class="result"></h2>
+        </div>
+        <div class="four">
+            <h2>4. Who won double medal for India in single Olympics after 1947?</h2>
+            <p class="group"><input type="radio" id="four-op1" name="ques4">PT Usha</p>
+            <p class="group"><input type="radio" id="four-op2" name="ques4">Harmanpreet singh</p>
+            <p class="group"><input type="radio" id="four-op3" name="ques4">PV sindhu</p>
+            <p class="group"><input type="radio" id="four-op4" name="ques4">Manu baker</p>
+            <h2 id="result4" class="result"></h2>
+        </div>
+        <div class="five">
+            <h2>5. In which category did Neeraj chopra won gold in olympics?</h2>
+            <p class="group"><input type="radio" id="five-op1" name="ques5">Long jump</p>
+            <p class="group"><input type="radio" id="five-op2" name="ques5">Javelin throw</p>
+            <p class="group"><input type="radio" id="five-op3" name="ques5">High jump</p>
+            <p class="group"><input type="radio" id="five-op4" name="ques5">Hammer throw</p>
+            <h2 id="result5" class="result"></h2>
+        </div>
+        <div class="six">
+            <h2>6. What do the five rings on olympic olympic flag represent?</h2>
+            <p class="group"><input type="radio" id="six-op1" name="ques6">The five Continents</p>
+            <p class="group"><input type="radio" id="six-op2" name="ques6">The five Countries</p>
+            <p class="group"><input type="radio" id="six-op2" name="ques6">The five rivers</p>
+            <p class="group"><input type="radio" id="six-op4" name="ques6">The five Oceans</p>
+            <h2 id="result6" class="result"></h2>
+        </div>
+        <div class="seven">
+            <h2>7. In which country did the ancient olympic games orginated?</h2>
+            <p class="group"><input type="radio" id="seven-op1" name="ques7">United states</p>
+            <p class="group"><input type="radio" id="seven-op2" name="ques7">China</p>
+            <p class="group"><input type="radio" id="seven-op3" name="ques7">Greece</p>
+            <p class="group"><input type="radio" id="seven-op4" name="ques7">Russia</p>
+            <h2 id="result7" class="result"></h2>
+        </div>
+        <div class="eight">
+            <h2>8. What are the five colors of the olympic rings?</h2>
+            <p class="group"><input type="radio" id="eight-op1" name="ques8">Red, Yellow, Blue, Green, Black</p>
+            <p class="group"><input type="radio" id="eight-op2" name="ques8">Red, Yellow, Green, Black, White</p>
+            <p class="group"><input type="radio" id="eight-op3" name="ques8">Red, Yellow, Blue, Black, White</p>
+            <p class="group"><input type="radio" id="eight-op4" name="ques8">Red, Blue, Green, Black, White</p>
+            <h2 id="result8" class="result"></h2>
+        </div>
+        <div class="nine">
+            <h2>9. Which city in Australia going to host 2032 olympics?</h2>
+            <p class="group"><input type="radio" id="nine-op1" name="ques9">Sydney</p>
+            <p class="group"><input type="radio" id="nine-op2" name="ques9">Gold Coast</p>
+            <p class="group"><input type="radio" id="nine-op3" name="ques9">Brisbane</p>
+            <p class="group"><input type="radio" id="nine-op4" name="ques9">Melbourne</p>
+            <h2 id="result9" class="result"></h2>
+        </div>
+        <div class="ten">
+            <h2>10. Which Badminton player has won a silver and a bronze medal in olympics?</h2>
+            <p class="group"><input type="radio" id="ten-op1" name="ques10">Saina Nerwal</p>
+            <p class="group"><input type="radio" id="ten-op2" name="ques10">PV Sindhu</p>
+            <p class="group"><input type="radio" id="ten-op3" name="ques10">Prakash padukone</p>
+            <p class="group"><input type="radio" id="ten-op4" name="ques10">Kidami srikanth</p>
+            <h2 id="result10" class="result"></h2>
+        </div>
+        <button onclick="check()">Submit</button>
+    </div>
+</body>
+</html>

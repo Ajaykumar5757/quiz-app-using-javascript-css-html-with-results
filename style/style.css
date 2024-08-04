@@ -1,0 +1,49 @@
+.section{
+    max-width:800px;
+    margin:30px auto;
+    border-radius: 10px;
+    padding:20px;
+    background-color: rgb(245, 222, 189);
+    color: rgb(66, 32, 0);
+    box-shadow: 0px 3px 3px 3px rgb(96, 65, 36);
+}
+
+.group{
+    display: block;
+    margin-left: 60px;
+}
+
+input{
+    width:50px;
+    margin-top:2px;
+    height: 15px;
+}
+
+button{
+    margin:5px;
+    margin-left:370px;
+    padding:5px 15px;
+    background-color: rgb(66, 32, 0);
+    color:white;
+}
+
+button:hover{
+    background-color: rgb(184, 130, 79);
+    color:black;
+}
+
+div{
+    margin:10px;
+}
+
+h2{
+    padding-left:20px;
+    font-size: 21px;
+}
+
+.result{
+    text-align: end;
+    margin-right:30px;
+    padding:5px;
+    font-size: 17px;
+}
