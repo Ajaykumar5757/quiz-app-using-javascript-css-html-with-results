@@ -1,104 +1,71 @@
-function check(){
-    var score=0;
-    if(document.getElementById('one-op2').checked==true){
-        document.getElementById("result1").innerHTML="Correct Answer";
-        document.getElementById("result1").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result1").innerHTML="Wrong answer <br> Correct Answer is Abinav Mithra";
-        document.getElementById("result1").style.color="rgb(200, 45, 45)";
-    } 
+const correctAnswers = {
+    'ques1': 'one-op2', 
+    'ques2': 'two-op4',
+    'ques3': 'three-op1', 
+    'ques4': 'four-op3', 
+    'ques5': 'five-op2', 
+    'ques6': 'six-op1', 
+    'ques7': 'seven-op3', 
+    'ques8': 'eight-op1', 
+    'ques9': 'nine-op3', 
+    'ques10': 'ten-op2',
+};
 
-    if(document.getElementById('two-op4').checked==true){
-        document.getElementById("result2").innerHTML="Correct Answer";
-        document.getElementById("result2").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result2").innerHTML="Wrong answer <br> Correct Answer is Tokyo";
-        document.getElementById("result2").style.color="rgb(200, 45, 45)";
-    } 
+let timer;
+let timeLeft = 60;
 
-    if(document.getElementById('three-op1').checked==true){
-        document.getElementById("result3").innerHTML="Correct Answer";
-        document.getElementById("result3").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result3").innerHTML="Wrong answer <br> Correct Answer is Hockey";
-        document.getElementById("result3").style.color="rgb(200, 45, 45)";
-    } 
+function check() {
+    let score = 0;
+    let allAnswered = true;
 
-    if(document.getElementById('four-op4').checked==true){
-        document.getElementById("result4").innerHTML="Correct Answer";
-        document.getElementById("result4").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result4").innerHTML="Wrong answer <br> Correct Answer is Manu Baker";
-        document.getElementById("result4").style.color="rgb(200, 45, 45)";
-    }
+    Object.keys(correctAnswers).forEach(ques => {
+        const selected = document.querySelector(`input[name="${ques}"]:checked`);
+        const correct = correctAnswers[ques];
+        
+        if (!selected) {
+            allAnswered = false;
+        }
 
-    if(document.getElementById('five-op2').checked==true){
-        document.getElementById("result5").innerHTML="Correct Answer";
-        document.getElementById("result5").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result5").innerHTML="Wrong answer <br> Correct Answer is Javelin Throw";
-        document.getElementById("result5").style.color="rgb(200, 45, 45)";
-    } 
+        if (selected && selected.id === correct) {
+            document.getElementById(`result${ques}`).innerHTML = "Correct Answer";
+            document.getElementById(`result${ques}`).style.color = "green";
+            score++;
+        } else {
+            document.getElementById(`result${ques}`).innerHTML = `Wrong answer <br> Correct Answer is ${document.getElementById(correct).parentNode.innerHTML}`;
+            document.getElementById(`result${ques}`).style.color = "rgb(200, 45, 45)";
+        }
+    });
 
-    if(document.getElementById('six-op1').checked==true){
-        document.getElementById("result6").innerHTML="Correct Answer";
-        document.getElementById("result6").style.color="green";
-        score++;
+    if (allAnswered) {
+        document.getElementById("quiz-score").innerHTML = `Your Result: ${score}/10`;
+    } else {
+        alert("Please answer all questions before submitting.");
     }
-    else{
-        document.getElementById("result6").innerHTML="Wrong answer <br> Correct Answer is The Five Continents";
-        document.getElementById("result6").style.color="rgb(200, 45, 45)";
-    }
-
-    if(document.getElementById('seven-op3').checked==true){
-        document.getElementById("result7").innerHTML="Correct Answer";
-        document.getElementById("result7").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result7").innerHTML="Wrong answer <br> Correct Answer is Greece";
-        document.getElementById("result7").style.color="rgb(200, 45, 45)";
-    }
-
-    if(document.getElementById('eight-op1').checked==true){
-        document.getElementById("result8").innerHTML="Correct Answer";
-        document.getElementById("result8").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result8").innerHTML="Wrong answer <br> Correct Answer is Red, Yellow, Blue, Green, Black";
-        document.getElementById("result8").style.color="rgb(200, 45, 45)";
-    } 
-
-    if(document.getElementById('nine-op3').checked==true){
-        document.getElementById("result9").innerHTML="Correct Answer";
-        document.getElementById("result9").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result9").innerHTML="Wrong answer <br> Correct Answer is Brisbane";
-        document.getElementById("result9").style.color="rgb(200, 45, 45)";
-    }
-
-    if(document.getElementById('ten-op2').checked==true){
-        document.getElementById("result10").innerHTML="Correct Answer";
-        document.getElementById("result10").style.color="green";
-        score++;
-    }
-    else{
-        document.getElementById("result10").innerHTML="Wrong answer <br> Correct Answer is PV Sindhu";
-        document.getElementById("result10").style.color="rgb(200, 45, 45)";
-    }
-
-    document.getElementById("quiz-score").innerHTML=score;
 }
+
+function resetQuiz() {
+    const allAnswers = document.querySelectorAll('input[type="radio"]');
+    allAnswers.forEach(answer => answer.checked = false);
+    const results = document.querySelectorAll('.result');
+    results.forEach(result => result.innerHTML = '');
+    document.getElementById("quiz-score").innerHTML = "0";
+    timeLeft = 60;
+    document.getElementById("timer").innerText = timeLeft;
+    startTimer();
+}
+
+function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => {
+        if (timeLeft > 0) {
+            timeLeft--;
+            document.getElementById("timer").innerText = timeLeft;
+        } else {
+            clearInterval(timer);
+            alert("Time's up!");
+            check();
+        }
+    }, 1000);
+}
+
+startTimer();
