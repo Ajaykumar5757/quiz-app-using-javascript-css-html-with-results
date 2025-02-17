@@ -1,49 +1,40 @@
-.section{
-    max-width:800px;
-    margin:30px auto;
-    border-radius: 10px;
-    padding:20px;
-    background-color: rgb(245, 222, 189);
-    color: rgb(66, 32, 0);
-    box-shadow: 0px 3px 3px 3px rgb(96, 65, 36);
+body {
+    font-family: Arial, sans-serif;
 }
 
-.group{
-    display: block;
-    margin-left: 60px;
+.section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-input{
-    width:50px;
-    margin-top:2px;
-    height: 15px;
+.score {
+    margin-bottom: 20px;
 }
 
-button{
-    margin:5px;
-    margin-left:370px;
-    padding:5px 15px;
-    background-color: rgb(66, 32, 0);
-    color:white;
+.result {
+    font-size: 14px;
+    color: #333;
 }
 
-button:hover{
-    background-color: rgb(184, 130, 79);
-    color:black;
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-div{
-    margin:10px;
+button:hover {
+    background-color: #45a049;
 }
 
-h2{
-    padding-left:20px;
-    font-size: 21px;
+input[type="radio"] {
+    margin-right: 10px;
 }
 
-.result{
-    text-align: end;
-    margin-right:30px;
-    padding:5px;
-    font-size: 17px;
+#timer {
+    font-weight: bold;
+    color: red;
 }
